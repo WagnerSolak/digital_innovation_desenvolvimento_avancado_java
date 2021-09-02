@@ -1,0 +1,207 @@
+Desenvolvimento avançado em Java
+Paradigma Funcional no Java
+João Paulo Oliveira Santos
+
+
+Entender o Paradigma Funcional no Java
+Programa funcional é o processo de construir software através de compisção de funções puras, evitando compartilhamento de estados, dados mutáveis e efeitos colaterais.
+É declarativa ao invés de imperátiva, essa é uma definição de Eric Elliot.
+A base da linguagem Java respeita o conceito imperativo, respeita a ordem, cada vez que declara uma linha está dando uma ordem para a CPU que ela vai processar.
+
+Paradigma Imperativo: É aquele que expressa o código através de comandos ao computador, nele é possível ter controle de estado dos objetos:
+C, Java, obedeciam paradigma imperativo. Ordens dada ao computador. Cada linha é da uma ordem. No momento que estou passando comando ele esta sendo executado.
+Script de ordens.
+
+Paradigma Funcional: Damos uma regra, uma declaração de como queremos que o programa se comporte.
+Vêm das funções matemáticas que foram desenvolvidas e a partir dela tinha um cálculo lambda. Parâmetros imutáveis e Recursividade.
+
+Conceitos fundamentais da programação funcional.
+Funções puras: É chamada de pura quando invocada mais de uma vez produz extamente o mesmo resultado. Função pura => quando invocada mais de uma vez.
+sout(valorVar);
+sout(valorVar);
+
+Imutabilidade: Significa que uma vez que uma variável que recebeu um valor, vai possuir esse valor para sempre, ou quando criamos um objeto ele não
+pode ser modificado.
+
+Imperativo X Declarativo
+
+É muito comum aprender a programar de forma imperativa, onde mandamos alguém fazer algo. Busque o usuário 15 no banco de dados. Valide essas informações do usuário.
+
+Na programação funcional tentamos programar de forma declarativa, onde declaramos o que desejamos, sem explicitar como será feito. Qual o usuário 15? Quais
+os erros dessas informações?
+
+
+Composição de funções: é criar uma nova função attravés da composição de outras. Por exemplo, vamos criar uma função que vai filtrar um array, filtrando
+apenas os números pares e multiplicando por dois.
+
+
+============================================================================================================================================================
+1. E aquele que expressa o código através de comandos ao computador, nele é possível ter controle de estado dos objetos, de acordo com a afirmação. Qual alternativa
+representa esse paradigma?
+a)[ ] Declarativa
+b)[ ] Imutabilidade
+c)[ ] Funcional
+d)[ ] Recursividade
+e)[X] Imperativo
+Paradigma Declarativo está acoplado ao paradigma funcional.
+Declarativo não seria como uma ordem mas como declaração.
+
+2. Damos uma regra, uma declaração de como queremos que o programa se comporte, de acordo com a afirmação. Qual alternativa representa este paradigma:
+a)[ ] Composição de funções
+b)[ ] Imutabilidade
+c)[ ] Funcional
+d)[X] Recursividade
+e)[ ] Imperativo
+Composição de funções: declara uma função e dentro dela passar um comportamento, uma função dentro de uma função.
+
+3. Uma vez que uma variável que recebe um valor, esta vai possuir esse valor para sempre, ou quando criamos um objeto ele não pode ser modificado, de acordo
+com a afirmação. Qual alternativa representa esse paradigma?
+a)[ ] Composição de funções
+b)[X] Imutabilidade
+c)[ ] Funcional
+d)[ ] Recursividade
+e)[ ] Imperativo
+
+============================================================================================================================================================
+Aprender como utilizar uma lambda e API Lambda do Java 8
+
+As lambdas obedecem o conceito do paradigma funcional, com eles podemos facilitar legibilidade do nosso código, além disso com a nova API Funcional do Java
+podemos ter uma alta produtividade para lidar com objetos.
+Primeiramente, devemos entender o que são interfaces funcionais.
+Para utilizar a lambda nao posso dar um compartamento para ela como Aula = aula = aula ->
+
+Interfaces funcionais - São interfaces que possuem apenas um método abstrato. Exemplo:
+public interface Funcao {
+String gerar(String valor);
+}
+Geralmente as interfaces funcionais possuem uma anotação em nível de classe (@FunctionIInterface), para forçar o compilador a apontar um erro se a interface não
+estiver de acordo com as regras de uma interface funcional. Esta anotação não obrigatória, pois o compilador consiste em reconhecer uma interface em tempo
+de compilação.
+
+@FunctionalInterface // proteção, quando utiliza esta anotação eu estou protegendo na declaração da interface, que nenhum user altera a declaração da interface
+Não permite a declaração de mais de um método abstrato dentro da interface.
+
+Antes do Java 8, se quiséssemos implementar um comportamento específico para uma única classe deveríamos utilizar uma classe anônima para implementar este comportamento.
+
+Exemplo: FuncaoComLambda
+Estrutura de uma lambda:
+InterfaceFuncional nomeVariavel = parametro -> logica
+onde:
+InterfaceFuncional -> deve ser uma interface do tp funcional que so pode ter um método abstrato
+nomeVariavel -> passado nome da variavel
+parametro -> comportamento
+
+
+Bastante atenção!
+- Quando uma lambda possui apenas uma instrução no corpo de sua lógica não é necessário o uso de chaves.
+Exemplo:
+Funcao colocarPrefixoSenhorNaString = valor -> "Sr. "+valor; (aqui tenho apenas uma instrução)
+
+Se a função possui mais de uma instrução DEVEMOS utilizar chaves e alem disso deve explicitar o retorno se o retorno for diferente de void.
+
+Funcao colocarPrefixoSenhorNaString = valor -> {
+String valorComprefixo = "Sr. "+valor;
+String valorComPrefixoEPontoFinal = valorComPrefixo+ ".";
+return valorComPrefixoEPontoFinal;
+};
+
+As chaves são necessárias porque ele não sabe que o valor está no escopo da lambda, qaundo nao utilizo chaves com 2 instruções!
+Em todas as hipóteses a funcao lambda que utilizar chaves na chave que fecha deverá possuir um ponto e vírgula!
+
+4. Qual a sintaxe base de uma lambda?
+a)[ ] Tipo nomeVariavel = parametro -> logica
+b)[ ] Tipo nomeVariavel = valor;
+c)[ ] TipoAbstrato nomeVariavel = valor;
+d)[X] InterfaceFuncional nomeVariavel = parametro -> logica
+e)[ ] TipoEnun nomeVariavel = parametro -> logica
+
+5. Quando devemos utilizar chaves em uma lambda?
+a)[ ] Quando o mesmo possui apenas uma instrução
+b)[ ] Quando utilizamos a referência do método
+c)[ ] Quando utilizamos a interface Runnable
+d)[X] Quando o mesmo possui mais de uma instrução
+e)[ ] Quando o mesmo não possui nenhuma instrução
+
+6. Qual das alternativas a seguir é uma declaração de um lambda?
+a)[ ] Funcao a = "2"
+b)[ ] Funcao a => "2";
+c)[ ] Funcao a = a => "2";
+d)[ ] Funcao a -> "2";
+e)[X] Funcao a = valor -> "2";
+
+7. Antes do Java 8, qual era a estratégia utilizada para implementação de interface em uma classe específica.
+a)[X] Classe Anônima
+b)[ ] Declaração de outra interface
+c)[ ] Enun
+d)[ ] Classe Abstrata
+e)[ ] Encapsulamento
+
+new funcao()
+@Override
+public String gerar(String valor){return "Sr. "+valor };
+
+============================================================================================================================================================
+Recursividade
+
+
+Na recursividade, uma função chama a si mesma repetidamente, até atingir uma condição de parada. No caso do Java, um método chama a si mesmo, passando para si
+objetos primitivos. Cada chamada gera uma nova entrada na pilha de execução, e alguns dados podem ser disponibilizados em um escopo global ou local, através
+de parâmetros em um escopo global ou local.
+
+Recursividade têm papel importante em programação funcional, facilitando que evitemos estados mutáveis e mantenhamos nosso programa mais declarativo, e menos
+imperativo.
+
+Quando chama o método o Java coloca na pilha de execução, modo imperativo deixa menos oneroso para sistema em relação a recursividade (mais legível, porem mais
+oneroso).
+
+Tail Call (Recursividade em causa) : Recursão em cauda é uma recursão onde não há nenhuma linha de código após a chamada do próprio método e, sendo assim, não há
+nenhum tpo de processamento a ser feito após a chamada recursiva. CÓPIA DOS VALORES PARA FAZER ESSE PROCESSAMENTO.
+Obs.: A JVM não suporta a recursão em cauda, ele lança um estouro de pilha (java.lang.StackOverFlowError). Mais usado em Scala (mais voltada paradigma funcional).
+
+Explicação Tail Caill:
+(FATORIAL/VARIÁVEL AUX.)
+fatorialA(5,1)
+fatorialA(4,5)
+fatorialA(3,20)
+fatorialA(2,60)
+fatorialA(1,120)
+fatorialA(0,120)
+120
+
+Tail Call : 5 chamadas
+Recursividade: 11 chamadas
+
+Memoization: é uma técnica de otimização que consiste no cache do resultado de uma função, baseado nos parâmetros de entrada. Com isso, nas seguintes execuções
+conseguimos ter uma resposta mais rápida.
+
+Em resumo se for possível usasr o for e o while em vez de recursividade em Java.
+
+8. Qual é o problema que pode ocorrer ao utilizar recursividade?
+a)[ ] Deadlock
+b)[ ] Starvation
+c)[ ] Concorrência
+d)[X] Estouro de pilha (StackOverFlow)
+e)[ ] Erro de compilação
+
+Erro do estouro de pilha -> RunTimeException e não de compilação.
+
+
+9. É uma técnica de otimização que consiste no cache do resultado de uma função, baseada nos parâmetros de entrada, a partir desta informação, julgue o item correto:
+a)[X] Memoization
+b)[ ] Tail Call
+c)[ ] Lambda
+d)[ ] Paradigma Imperativo
+e)[ ] Imutabilidade
+
+Memoization -> guarda valores em cache para melhor performance, rapidez do processamento ao executar a funcao que já fez a operação.
+
+10. É uma recursão onde não há nenhuma linha de código após a chamda do próprio método e, sendo assim, não há nenhum tipo de processamento a ser feito após a chamada
+recursiva, a partir desta afirmação, julgue o item correto:
+a)[ ] Memoization
+b)[X] Tail Call
+c)[ ] Lambda
+d)[ ] Paradigma Imperativo
+e)[ ] Imutabilidade
+
+
+============================================================================================================================================================
