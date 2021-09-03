@@ -1,6 +1,4 @@
-package br.com.digital.innovation.one.javafuncional;
-
-import ch.qos.logback.classic.pattern.PrefixCompositeConverter;
+package br.com.digital.innovation.one.javafuncional.paradigmafuncional;
 
 public class FuncaoComClasseAnonima {
 

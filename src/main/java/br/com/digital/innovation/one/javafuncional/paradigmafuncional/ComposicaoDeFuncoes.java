@@ -1,4 +1,4 @@
-package br.com.digital.innovation.one.javafuncional;
+package br.com.digital.innovation.one.javafuncional.paradigmafuncional;
 
 import java.util.Arrays;
 

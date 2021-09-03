@@ -1,4 +1,4 @@
-package br.com.digital.innovation.one.javafuncional.FatorialRecursivo;
+package br.com.digital.innovation.one.javafuncional.paradigmafuncional.FatorialRecursivo;
 
 public class FatorialRecursivo {
 
