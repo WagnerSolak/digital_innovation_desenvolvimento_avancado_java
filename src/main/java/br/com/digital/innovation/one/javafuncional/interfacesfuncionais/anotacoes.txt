@@ -1,0 +1,16 @@
+Parte 1: Funções de alta ordem
+
+É uma função que retorna uma função ou que recebe uma função como parâmetro.
+Em resumo:
+Recebe por parâmetro outra função; // mais comum no Java
+Ou que ela retorna uma funcao que já retorna outra;
+
+Funções
+
+Classe Stream, não necessita de instanciar, não têm método construtor, apenas digitando Stream. <- ja aparecem os metódos dessa classe:
+new Stream<>()   :Esta forma e errada porque ele é um método abstrato que não são instanciados.
+Stream.of(nomes) :Nome já esta na corrente de stream
+.filter()        :Para filtrar nome Joao dentro da classe, recebe um predicate(recebe um parametro e retorna um boolean)
+.filter(nome -> ):Para cada nome
+.collect         :Vai colecionar
+Collectors.joining() :Pega um array de String e transforma tudo em uma String concatenando sem espaço.
