@@ -38,8 +38,8 @@ Os códigos deste repositório foram construídos durante o **Bootcamp Capgemini
 
 ### Status
 
-- [X] Em Andamento
-- [ ] Concluído
+- [ ] Em Andamento
+- [X] Concluído
 
 
 # Autor
